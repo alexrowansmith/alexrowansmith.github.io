@@ -1,0 +1,431 @@
+@import "https://fonts.googleapis.com/css?family=Arapey";
+@import "https://fonts.googleapis.com/css?family=Montserrat";
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+  margin: 0;
+  font-family: Arapey;
+  overflow-x: hidden;
+}
+
+body h1 {
+  text-align: center;
+  z-index: 3;
+  margin-top: 10%;
+  font-size: 5em;
+}
+
+body #myBtn {
+  opacity: 0;
+  z-index: 99;
+  color: #223;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 15px;
+  font-family: Arapey;
+  font-size: 19px;
+  transition: opacity .5s linear;
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  left: 32px;
+  background-color: none !important;
+}
+
+body #myBtn:after {
+  content: "";
+  width: 100%;
+  height: .05em;
+  opacity: 0;
+  opacity: 1;
+  transform-origin: center;
+  background-color: #223;
+  transition: opacity .3s, transform .3s;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scale(0);
+}
+
+body #myBtn:hover:after {
+  transform: scale(1);
+}
+
+body #scroll-progress {
+  height: 0%;
+  width: 4px;
+  z-index: 10000;
+  background: #223;
+  position: fixed;
+  top: 2%;
+  left: 20px;
+}
+
+body #progress-bar {
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+}
+
+body #progress-bar-info {
+  height: 95%;
+  z-index: 10000;
+  position: fixed;
+  top: 2%;
+  left: -25px;
+}
+
+body ul {
+  z-index: 10000;
+  margin-top: -10px;
+  list-style: none;
+}
+
+body ul li i {
+  margin-right: 20px;
+}
+
+section {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 3em;
+  position: relative;
+}
+
+section #title {
+  width: 30%;
+  margin-top: 7%;
+  font-size: 2.3em;
+  position: absolute;
+  left: 5%;
+}
+
+section #title #span {
+  width: 100%;
+  height: 5px;
+  background: #223;
+  margin-top: 20px;
+  display: block;
+}
+
+section #date {
+  width: 400px;
+  color: #223;
+  font-size: 30px;
+  position: absolute;
+  top: 7%;
+  right: 2%;
+}
+
+section #title1 {
+  width: 30%;
+  margin-top: 62vh;
+  font-size: 2.3em;
+  position: absolute;
+  right: 5%;
+}
+
+section #title1 #span1 {
+  width: 100%;
+  height: 5px;
+  background: #223;
+  margin-bottom: 20px;
+  display: block;
+}
+
+section #date1 {
+  width: 400px;
+  color: #223;
+  font-size: 30px;
+  position: absolute;
+  top: 70%;
+  left: 9%;
+}
+
+section #title2 {
+  width: 30%;
+  margin-top: 12vh;
+  font-size: 2.3em;
+  position: absolute;
+  left: 5%;
+}
+
+section #title2 #span2 {
+  width: 100%;
+  height: 5px;
+  background: #223;
+  margin-bottom: 20px;
+  display: block;
+}
+
+section #date2 {
+  width: 400px;
+  color: #223;
+  font-size: 30px;
+  position: absolute;
+  top: 7%;
+  left: 2%;
+}
+
+section img {
+  z-index: 1;
+  position: absolute;
+}
+
+section #img {
+  width: 40%;
+  height: 60%;
+  border-radius: 20px 0 0 20px;
+  top: 20%;
+  right: 0;
+  box-shadow: -10px 10px 10px #0000004d;
+}
+
+section #imgdiv {
+  background-color: none;
+  width: 40%;
+  height: 60%;
+  border-radius: 20px 0 0 20px;
+  padding: 15px;
+  position: absolute;
+  top: 20%;
+  right: 0;
+  box-shadow: inset 0 0 20px 20px #0000001a;
+}
+
+section #img1 {
+  width: 40%;
+  height: 40%;
+  border-radius: 0 0 20px 20px;
+  top: 20%;
+  left: 40px;
+  box-shadow: 0 10px 10px #0000004d;
+}
+
+section #img1div {
+  background-color: none;
+  width: 40%;
+  height: 60%;
+  border-radius: 0 0 20px 20px;
+  padding: 15px;
+  position: absolute;
+  top: 0%;
+  left: 40px;
+  box-shadow: inset 0 0 20px 20px #0000001a;
+}
+
+section #img2 {
+  width: 40%;
+  height: 40%;
+  border-radius: 0 20px 20px 0;
+  top: 40%;
+  left: 40px;
+  box-shadow: -10px 0 10px #0000004d;
+}
+
+section #img2div {
+  background-color: none;
+  width: calc(40% + 40px);
+  height: 40%;
+  border-radius: 0 20px 20px 0;
+  padding: 15px;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  box-shadow: inset 0 0 20px 20px #0000001a;
+}
+
+.sticky, .sticky2 {
+  background: #f1f1f1;
+  border-top: 2px solid #fff;
+  box-shadow: inset 0 0 10px 10px #0000001a;
+}
+
+.sticky1, .sticky3 {
+  box-shadow: none;
+  background: #fff;
+}
+
+.percentage {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+#box {
+  width: 100px;
+  height: 100px;
+  border: 5px solid #d3d3d3;
+  margin: auto;
+  position: absolute;
+  inset: 0;
+}
+
+#p {
+  width: 45%;
+  margin-top: 17%;
+  position: absolute;
+  left: 5%;
+}
+
+#p1, #p2 {
+  width: 45%;
+  margin-top: 5%;
+  position: absolute;
+  right: 5%;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+.arrow {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: inline-block;
+  position: absolute;
+}
+
+.arrow:before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  transform-origin: 50%;
+  border: 2px solid #000;
+  border-width: 2px 2px 0 0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.arrow.left:before {
+  margin: -15px 0 0 -10px;
+  transform: rotate(-135deg);
+}
+
+.arrow.up:before {
+  margin: -10px 0 0 -15px;
+  transform: rotate(-45deg);
+}
+
+.arrow.down:before {
+  margin: -20px 0 0 -15px;
+  transform: rotate(135deg);
+}
+
+.arrow.right:before {
+  margin: -15px 0 0 -20px;
+  transform: rotate(45deg);
+}
+
+.arrow:after {
+  content: "";
+  transform-origin: 50%;
+  border-style: solid;
+  border-color: #000;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.arrow.left:after {
+  width: 40px;
+  height: 0;
+  border-width: 2px 0 0;
+  transform: translate(-14px, -1px);
+}
+
+.arrow.up:after {
+  width: 0;
+  height: 40px;
+  border-width: 0 2px 0 0;
+  transform: translate(-1px, -14px);
+}
+
+.arrow.down:after {
+  width: 0;
+  height: 40px;
+  border-width: 0 2px 0 0;
+  transform: translate(-1px, -26px);
+}
+
+.arrow.right:after {
+  width: 40px;
+  height: 0;
+  border-width: 2px 0 0;
+  transform: translate(-26px, -1px);
+}
+
+.arrow.circle {
+  background: #e9e9b4bf;
+  border-radius: 50px;
+}
+
+.arrow.debug {
+  outline: 1px solid #00008b;
+}
+
+.arrow.debug:before {
+  outline: 1px solid red;
+}
+
+body {
+  margin-left: 10%;
+}
+
+#div1, #div, #div2 {
+  justify-content: center;
+  margin-top: 45%;
+  margin-left: -10%;
+  display: flex;
+}
+
+#banner {
+  background-color: none;
+  justify-content: center;
+  margin-top: -3%;
+  margin-left: -14%;
+}
+
+#banner h1 {
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Montserrat;
+  font-size: 70px;
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+#background-video {
+  width: 102.5%;
+  height: 50vh;
+  object-fit: cover;
+  z-index: 2;
+  margin: 0 auto 0;
+  position: relative;
+  inset: 0;
+}
+
+video {
+  border: 30px solid #223;
+}
+
+#imgsm {
+  width: 70px;
+  border-radius: 5px;
+  transform: translateY(26px);
+}
+
+/*# sourceMappingURL=scroll.b1276d39.css.map */

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/vr.css?ver=1.1.0" rel="stylesheet">
+
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body id="top">
+    <header>
+      <div class="profile-page sidebar-collapse">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400" style="width:105vw;background:#223">
+          <div class="container1">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><p class="nav-link smooth-scroll" style="font-size:45px;margin-top:-5px;margin-bottom:-16px;text-transform: capitalize;margin-left:-60px;margin-right:60px;"><i class="fa fa-home"></i></p></li>
+                <li class="nav-item" style="margin-right:150px;"><a class="nav-link smooth-scroll" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html#portfolio">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="index.html#contact">Contact</a></li>
+              </ul>
+          </div>
+
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+    <div class="right"><a href="debris.html"><i class="fa fa-chevron-right" style="position:absolute;margin:38px 0 0 70px;font-size:40px;color:white;opacity:1"></i><p style="position:absolute; bottom:-50px;left:10px;color:white">University Projects</p><img src="images/octo.jpg"style="width:80px;display:flex;margin-bottom:-134px"><img src="images/light.jpg" style="width:78px;height:60px;"><img src="images/debris.jpg" style="width:80px;height:120px;display:inline-block;margin-top:80px;margin-left:5px;"></a></div>
+       <div class="left"><a href="f35.html"><i class="fa fa-chevron-left" style="position:absolute;margin:38px 0 0 60px;font-size:40px;color:white;opacity:1"></i><p style="position:absolute; bottom:-10px;left:55px;color:white">Work Projects</p><img src="images/f35.jpg"style="width:78px;display:flex;margin-bottom:-134px"><img src="images/twin.jpg" style="width:78px;"><img src="images/web.jpg" style="width:80px;height:118px;display:inline-block;margin-top:80px;margin-left:7px;"></a></div>
+      <input type="radio" name="slider" value="item-1" id="item-1" checked>
+      <input type="radio" name="slider" value="item-2" id="item-2">
+      <input type="radio" name="slider" value="item-3" id="item-3">
+    <div class="cards">
+      <label class="card" for="item-1" id="song-1">
+        <img src="images/vr.jpg" alt="song">
+        <p id="feat"><i class="fa fa-star" aria-hidden="true"></i>
+Featured</p>
+        <div class="h4">Programming in Virtual Reality</div>
+        <p>Experimental Programming</p>
+      </label>
+      <label class="card" for="item-2" id="song-2">
+        <img src="images/chart.jpg" alt="song">
+        <div class="h4">Vectorising Raster Charts</div>
+        <p>Coding/Project Management</p>
+      </label>
+      <label class="card" for="item-3" id="song-3">
+        <img src="images/lecture.jpg" alt="song">
+        <div class="h4">Christmas Lectures</div>
+        <p>Presentation</p>
+      </label>
+    </div>
+    <div class="player">
+      <div class="upper-part" style="min-height:50vw">
+
+        <div class="info-area" id="test">
+          <label class="song-info" id="song-info-1">
+            <span><i class="fa fa-calendar"></i><i class="spandate">Oct 2016 - Apr 2017</i></span> <span class="margin-left-15"><i class="fa fa-user"></i>Alex R.</span>
+            <a href="" class="down"><div class="download1" id='btn'>Download Full Report</div></a>
+            <div class="sub-line">
+              <div class="subtitle"><h2 style='margin-top:-20px;'>Programming in Virtual Reality</h2>As virtual reality becomes evermore prominent in the modern day, we aim to investigate its exciting limits and prove just what is and may be possible as VR continues to grow. Incorporating mathematics into our project, one of our goals was to create an apparent four-dimensional Klein Bottle in virtual reality, using Unity 3D, Steam VR and the HTC Vive to make this possible.<h3>Introduction</h3>Our report aims to investigate the use of virtual reality, using a cross-platform game engine to explore and test some of the ideas we had. We chose to undertake this project as virtual reality is such an exciting prospect for the world in the future, in addition to this we tried to incorporate our love for mathematics into this virtual world. Initially our main objective for the project was to model and create a Klein Bottle, where it could visualised in virtual reality. We hoped that it would be possible to use a method of movement to walk over the surface. The surface would be modelled using an external program outside of Unity, called Blender and then imported. One of the main appeals of VR is the movement around seemingly large spaces, and so we would also aim to implement different modes of movement, such as touch-pad walking and controller teleportation over the three-dimensional representation of the 4D object.<br/> A Klein Bottle and a Mobius Strip have an Euler characteristic 0. [5] As stated if you were to walk along the Klein Bottle you would never encounter a boundary this is due to the fact that a Klein bottle is a four dimensional object meaning there are no intersections. In a 3D representation of a Klein bottle there is an intersection which is why one appears in our model.<h3>Methodology</h3>Steam VR is a virtual reality environment, with a headset made jointly by HTC called the 'Vive'. The Vive itself only became commercially available in April 2016. In contrast to its largest competitor, the Oculus Rift, the Vive aimed to reduce motion sickness by incorporating even more interactivity to simulate a more 'real' experience. The headset consists of two LCD screens [1080 x 1200 resolution] behind the lenses. Steam VR was the ideal system for our project as the movement and data from the base stations and headset tracking system could be interpreted by Unity via the Steam VR plugin.<br/><br/>After deciding that we wanted to create our own virtual environment, it was apparent that we needed to create a method of movement and interaction with the world. Whilst the Vive could track small movements relative to the area enclosed by the base stations, this was not suffcient to move over larger distances, for example the Klein Bottle. Therefore we came to a conclusion that teleportation using pointers from the hand-held controllers would reduce motion-sickness, something experienced more prominently using touch-pad movement, as well as quicker and much more simple to use.<br/><br/>Whilst neither of us had any experience in using Unity or programming in C#, the language primarily used to code scripts in Unity, it was evident that we could not program these scripts manually. However during an attempt at learning this environment we found tutorials and pre-made scripts by the YouTube user: 'thestonefox' [7] which were compatible with Unity 3D. This included teleportation scripts using simple pointers. It also meant that we could copy these scripts across onto the controllers of the Vive, so that in a basic plane in virtual reality, we had a simple and suitable method of movement.<br/><br/> Teleportation is great and we had fully intended to use it, however using the scripts we had meant we couldn't teleport onto the surface of the Klein Bottle. Therefore we had to find a different movement system. We went with a simple flying script created by Unity 3D forum user Chillre. It's a very simple system, that at a basic level, provides as force in the direction you are looking allowing the user to fly. Another advantage is that flying provides more freedom to move about the environment and view the model from a variety of different angles not available by teleportation alone. We also decided to create a more interactable environment by using 'interactable object' scripts so that an object in the environment could be picked up, or even thrown as in Figure [2].<br/><br/>In order to create a Klein bottle for unity we had to use Blender, a program in which you can create complex 3D models. Using the equations shown in Figure [6], the program creates a 3D version of a Klein bottle. It is not quite perfect with the bottom being too much like an edge but it does look very good. After we created the model it was simple to import it into unity by saving the file in the assets folder. When imported we dropped it into the scene and thus have a 3D Klein bottle in unity. Images of the Klein Bottles are shown below in Unity and Blender.<h3>Conclusion</h3>To conclude Virtual Reality is an impressive piece of technology due to the vast range of applications in the near future; yet is only beginning to emerge from its infancy, despite major developments over the last decade. Our project has been tough with multiple setbacks, including asset incompatibility and software updating. With the realisation that programming for this purpose was particularly challenging, especially being novices to begin with. We now hope to bring together all the work we have done to create a tour of the Klein Bottle in virtual reality.</div>
+</div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+    <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/core/popper.min.js?ver=1.1.0"></script>
+    <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
+    <script src="js/now-ui-kit.js?ver=1.1.0"></script>
+    <script src="js/aos.js?ver=1.1.0"></script>
+    <script src="scripts/main.js?ver=1.1.0"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    window.transitionToPage = function(href) {
+    document.querySelector('body').style.opacity = 0
+    setTimeout(function() {
+        window.location.href = href
+    }, 500)
+}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.querySelector('body').style.opacity = 1
+})
+    </script>
+    <script>
+    $('input[name="slider"]').on('change', function(){
+        if ($(this).val()=='item-1') {
+
+            //change to "show update"
+             $(".subtitle").fadeOut(function(){$(this).html("<h2 style='margin-top:-20px;'>Programming in Virtual Reality</h2>As virtual reality becomes evermore prominent in the modern day, we aim to investigate its exciting limits and prove just what is and may be possible as VR continues to grow. Incorporating mathematics into our project, one of our goals was to create an apparent four-dimensional Klein Bottle in virtual reality, using Unity 3D, Steam VR and the HTC Vive to make this possible.<h3>Introduction</h3>Our report aims to investigate the use of virtual reality, using a cross-platform game engine to explore and test some of the ideas we had. We chose to undertake this project as virtual reality is such an exciting prospect for the world in the future, in addition to this we tried to incorporate our love for mathematics into this virtual world. Initially our main objective for the project was to model and create a Klein Bottle, where it could visualised in virtual reality. We hoped that it would be possible to use a method of movement to walk over the surface. The surface would be modelled using an external program outside of Unity, called Blender and then imported. One of the main appeals of VR is the movement around seemingly large spaces, and so we would also aim to implement different modes of movement, such as touch-pad walking and controller teleportation over the three-dimensional representation of the 4D object.<br/> A Klein Bottle and a Mobius Strip have an Euler characteristic 0. [5] As stated if you were to walk along the Klein Bottle you would never encounter a boundary this is due to the fact that a Klein bottle is a four dimensional object meaning there are no intersections. In a 3D representation of a Klein bottle there is an intersection which is why one appears in our model.<h3>Methodology</h3>Steam VR is a virtual reality environment, with a headset made jointly by HTC called the 'Vive'. The Vive itself only became commercially available in April 2016. In contrast to its largest competitor, the Oculus Rift, the Vive aimed to reduce motion sickness by incorporating even more interactivity to simulate a more 'real' experience. The headset consists of two LCD screens [1080 x 1200 resolution] behind the lenses. Steam VR was the ideal system for our project as the movement and data from the base stations and headset tracking system could be interpreted by Unity via the Steam VR plugin.<br/><br/>After deciding that we wanted to create our own virtual environment, it was apparent that we needed to create a method of movement and interaction with the world. Whilst the Vive could track small movements relative to the area enclosed by the base stations, this was not suffcient to move over larger distances, for example the Klein Bottle. Therefore we came to a conclusion that teleportation using pointers from the hand-held controllers would reduce motion-sickness, something experienced more prominently using touch-pad movement, as well as quicker and much more simple to use.<br/><br/>Whilst neither of us had any experience in using Unity or programming in C#, the language primarily used to code scripts in Unity, it was evident that we could not program these scripts manually. However during an attempt at learning this environment we found tutorials and pre-made scripts by the YouTube user: 'thestonefox' [7] which were compatible with Unity 3D. This included teleportation scripts using simple pointers. It also meant that we could copy these scripts across onto the controllers of the Vive, so that in a basic plane in virtual reality, we had a simple and suitable method of movement.<br/><br/> Teleportation is great and we had fully intended to use it, however using the scripts we had meant we couldn't teleport onto the surface of the Klein Bottle. Therefore we had to find a different movement system. We went with a simple flying script created by Unity 3D forum user Chillre. It's a very simple system, that at a basic level, provides as force in the direction you are looking allowing the user to fly. Another advantage is that flying provides more freedom to move about the environment and view the model from a variety of different angles not available by teleportation alone. We also decided to create a more interactable environment by using 'interactable object' scripts so that an object in the environment could be picked up, or even thrown as in Figure [2].<br/><br/>In order to create a Klein bottle for unity we had to use Blender, a program in which you can create complex 3D models. Using the equations shown in Figure [6], the program creates a 3D version of a Klein bottle. It is not quite perfect with the bottom being too much like an edge but it does look very good. After we created the model it was simple to import it into unity by saving the file in the assets folder. When imported we dropped it into the scene and thus have a 3D Klein bottle in unity. Images of the Klein Bottles are shown below in Unity and Blender.<h3>Conclusion</h3>To conclude Virtual Reality is an impressive piece of technology due to the vast range of applications in the near future; yet is only beginning to emerge from its infancy, despite major developments over the last decade. Our project has been tough with multiple setbacks, including asset incompatibility and software updating. With the realisation that programming for this purpose was particularly challenging, especially being novices to begin with. We now hope to bring together all the work we have done to create a tour of the Klein Bottle in virtual reality.");
+             $(".spandate").text("Oct 2016 - Apr 2017");}).fadeIn();
+             $(".down").attr("href", "http://www.google.com/");
+        } if ($(this).val()=='item-2')  {
+            $(".subtitle").fadeOut(function(){$(this).html("<h2 style='margin-top:-20px;'>Vectorising Raster Charts</h2>One project I chose to undertake with a small group of other students was 'Vectorising Raster Charts', which was undertaken in association with the UK Hydrographic Office (UKHO). With copies of their globally distributed charts, our task was to vectorise these images that had been initially hand drawn over several hundred years ago, so that the charts could be digitally analysed. Using text-recognition AI-based software in conjunction with open-source vectorising software the eventual product could digitalise hand-written depths across the coast of the Isle of Wight. One problem we faced was that the raster charts provided were too large in size; I then created a program that could slice up the charts and vectorise each segment simultaneously.  We later presented our results in front of a panel of UKHO managers, who were able to use our program for their purpose in industry. ");
+            $(".spandate").text("Jan 2016 - May 2016");}).fadeIn();
+            $(".down").attr("href", "http://www.google.com/");
+        } if ($(this).val()=='item-3') {
+            $(".subtitle").fadeOut(function(){$(this).html("<h2 style='margin-top:-20px;'>Christmas Lectures</h2>One project I chose to undertake with a small group of other students was 'Vectorising Raster Charts', which was undertaken in association with the UK Hydrographic Office (UKHO). With copies of their globally distributed charts, our task was to vectorise these images that had been initially hand drawn over several hundred years ago, so that the charts could be digitally analysed. Using text-recognition AI-based software in conjunction with open-source vectorising software the eventual product could digitalise hand-written depths across the coast of the Isle of Wight. One problem we faced was that the raster charts provided were too large in size; I then created a program that could slice up the charts and vectorise each segment simultaneously.  We later presented our results in front of a panel of UKHO managers, who were able to use our program for their purpose in industry.1<br/><br/><iframe width='80%' height='500px' style='margin-left:10%' src='https://www.youtube.com/embed/k4gDm7o4qVI'></iframe>");
+            $(".spandate").text("Aug 2015 - Dec 2015");}).fadeIn();
+            $(".down").attr("href", "http://www.google.com/");
+        }
+    });
+    </script>
+    <span onclick="transitionToPage('')"></span>
+    <script>
+    $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading.</div></div>');
+    $(window).on('load', function(){
+      setTimeout(removeLoader, 600); //wait for page load PLUS two seconds.
+    });
+    function removeLoader(){
+        $( "#loadingDiv" ).fadeOut(600, function() {
+          // fadeOut complete. Remove the loading div
+          $( "#loadingDiv" ).remove(); //makes page more lightweight
+      });
+    }</script>
+
+
+  </body>
+</html>

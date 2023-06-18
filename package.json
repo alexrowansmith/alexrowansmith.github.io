@@ -1,0 +1,18 @@
+{
+  "name": "creative-cv_free_1-1-0",
+  "version": "1.0.0",
+  "description": "Directory Structure\r -------------------\r css\\              - Stylesheets CSS files for the template.\r images\\           - Images used in template.\r scripts\\          - JavaScript used in the template.\r styles\\           - SCSS source files for stylesheets CSS. Available in Purchased versions only.\r favicon.ico       - Favicon placeholder provided for the template.\r index.html        - Main HTML page to open the template in browser.\r *.html            - Additional HTML pages (if any).\r LICENSE-*.txt     - License file as per your downloaded variant.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "smooth-scrollbar": "^8.8.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.scss'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body id="body">
+    <div id="no-margin">
+    <div id="progress-bar"><div id="progress-bar-info">
+    <ul>
+        <li><i class="fa fa-circle" aria-hidden="true" style="color:#223"></i></li>
+        <li><i class="fa fa-circle" aria-hidden="true" style="color:#223;margin-top:12vh;"></i><img id="imgsm" src="images/vr.jpg"></li>
+        <li><i class="fa fa-circle" aria-hidden="true" style="color:#223;margin-top:39vh;"></i><img id="imgsm" src="images/lecture.jpg"></li>
+        <li><i class="fa fa-circle" aria-hidden="true" style="color:#223;margin-top:5vh;"></i></li>
+    </ul>
+    </div><div id="scroll-progress"></div></div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">back to top</button>
+    <section style="height:40vh" id="banner">
+        <h1>Project Portfolio</h1>
+        <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+            <source src="Pexels Videos 2435376.mp4" type="video/mp4">
+            </video>
+        
+    </section></div>
+    <section style="height:50vh"></section>
+    <section class="sticky">
+        <blockquote id="title">Programming in Virtual Reality<span id="span"></span></blockquote>
+        <img id="img" src="images/vr.jpg"><div id="imgdiv"></div>
+        <div id="date">October 2016 - April 2017</div>
+        <p id="p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus tempora repudiandae pariatur, distinctio illo nostrum quaerat voluptas obcaecati saepe, corrupti, quia repellendus beatae dolorem laudantium vel exercitationem optio amet ex fugit ducimus. Expedita, quasi provident ratione error ipsum quia nulla incidunt repellat, illo dolore dignissimos? Vero, fugiat. Quae omnis assumenda cumque nisi nam officia at doloribus similique nulla sapiente incidunt ab, corporis deserunt optio maxime repudiandae ex quaerat laboriosam, aut aliquid ratione molestiae minus veniam velit! Officiis, totam, excepturi velit in distinctio optio commodi laboriosam eius officia suscipit accusamus, porro quam et sapiente expedita possimus deserunt vero soluta inventore tempora id? Omnis, deserunt rem architecto impedit quo quod praesentium officia obcaecati itaque quibusdam, reprehenderit, aut dolore inventore natus. Vel quaerat quod dolorum praesentium illo et aliquam tenetur quibusdam minima iste, pariatur fuga? Voluptatibus velit quod deleniti esse quis iure non provident neque aliquid, eveniet dignissimos quidem quos accusantium dolores, vel et commodi, minima pariatur totam natus tenetur! In nam maxime neque, deleniti unde odit, ducimus consequatur exercitationem quaerat, quisquam labore non veritatis. Repudiandae ipsum sint architecto sed, aspernatur ea aut placeat provident dolorum est a exercitationem modi nesciunt tempore ad praesentium cum! Blanditiis laboriosam quas, repudiandae nostrum eaque aut distinctio.</p>
+        <div id="div"><span class="arrow circle down"></span></div>
+    </section>
+    <section class="sticky1">
+        <blockquote id="title1"><span id="span1"></span>"You should totally subscribe to my channel now"</blockquote>
+        <img id="img1" src="images/lecture.jpg"><div id="img1div"></div>
+        <div id="date1">October 2016 - April 2017</div>
+        <p id="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus tempora repudiandae pariatur, distinctio illo nostrum quaerat voluptas obcaecati saepe, corrupti, quia repellendus beatae dolorem laudantium vel exercitationem optio amet ex fugit ducimus. Expedita, quasi provident ratione error ipsum quia nulla incidunt repellat, illo dolore dignissimos? Vero, fugiat. Quae omnis assumenda cumque nisi nam officia at doloribus similique nulla sapiente incidunt ab, corporis deserunt optio maxime repudiandae ex quaerat laboriosam, aut aliquid ratione molestiae minus veniam velit! Officiis, totam, excepturi velit in distinctio optio commodi laboriosam eius officia suscipit accusamus, porro quam et sapiente expedita possimus deserunt vero soluta inventore tempora id? Omnis, deserunt rem architecto impedit quo quod praesentium officia obcaecati itaque quibusdam, reprehenderit, aut dolore inventore natus. Vel quaerat quod dolorum praesentium illo et aliquam tenetur quibusdam minima iste, pariatur fuga? Voluptatibus velit quod deleniti esse quis iure non provident neque aliquid, eveniet dignissimos quidem quos accusantium dolores, vel et commodi, minima pariatur totam natus tenetur! In nam maxime neque, deleniti unde odit, ducimus consequatur exercitationem quaerat, quisquam labore non veritatis. Repudiandae ipsum sint architecto sed, aspernatur ea aut placeat provident dolorum est a exercitationem modi nesciunt tempore ad praesentium cum! Blanditiis laboriosam quas, repudiandae nostrum eaque aut distinctio.</p>
+        <div id="div1"><span class="arrow circle down"></span></div>
+    </section>
+    <section class="sticky2">
+        <blockquote id="title2"><span id="span2"></span>"You should totally subscribe to my channel now"</blockquote>
+        <img id="img2" src="images/chart.jpg"><div id="img2div"></div>
+        <div id="date2">October 2016 - April 2017</div>
+        <p id="p2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus tempora repudiandae pariatur, distinctio illo nostrum quaerat voluptas obcaecati saepe, corrupti, quia repellendus beatae dolorem laudantium vel exercitationem optio amet ex fugit ducimus. Expedita, quasi provident ratione error ipsum quia nulla incidunt repellat, illo dolore dignissimos? Vero, fugiat. Quae omnis assumenda cumque nisi nam officia at doloribus similique nulla sapiente incidunt ab, corporis deserunt optio maxime repudiandae ex quaerat laboriosam, aut aliquid ratione molestiae minus veniam velit! Officiis, totam, excepturi velit in distinctio optio commodi laboriosam eius officia suscipit accusamus, porro quam et sapiente expedita possimus deserunt vero soluta inventore tempora id? Omnis, deserunt rem architecto impedit quo quod praesentium officia obcaecati itaque quibusdam, reprehenderit, aut dolore inventore natus. Vel quaerat quod dolorum praesentium illo et aliquam tenetur quibusdam minima iste, pariatur fuga? Voluptatibus velit quod deleniti esse quis iure non provident neque aliquid, eveniet dignissimos quidem quos accusantium dolores, vel et commodi, minima pariatur totam natus tenetur! In nam maxime neque, deleniti unde odit, ducimus consequatur exercitationem quaerat, quisquam labore non veritatis. Repudiandae ipsum sint architecto sed, aspernatur ea aut placeat provident dolorum est a exercitationem modi nesciunt tempore ad praesentium cum! Blanditiis laboriosam quas, repudiandae nostrum eaque aut distinctio.</p>
+        <div id="div2"><span class="arrow circle down"></span></div>
+    </section>
+    <section>
+        <h1>Scroll up</h1>
+    </section>
+<script src='main.js'></script>
+
+</body>
+</html>

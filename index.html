@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/aos.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/bootstrap.min.css?ver=1.1.0" rel="stylesheet">
+    <link href="css/main.css?ver=1.1.0" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="js/profile.js" async defer type="text/javascript"></script>
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module">
+    if ( $(window).width() > 767) {
+$(document).ready(function(){
+
+      setTimeout(
+        function()
+        {$("html, body").animate({scrollTop:$("#start").offset().top},5000);}, 2000);
+      setTimeout(
+        function()
+        {$('#nav').hide().delay(5000).fadeIn(50);
+});
+setTimeout(
+  function()
+  {$('#header').css('opacity',0);
+},7000);
+});}
+    </script>
+    <script>
+
+      var TxtRotate = function(el, toRotate, period) {
+    this.toRotate = toRotate;
+    this.el = el;
+    this.loopNum = 0;
+    this.period = parseInt(period, 10) || 2000;
+    this.txt = '';
+    this.tick();
+    this.isDeleting = false;
+  };
+
+  TxtRotate.prototype.tick = function() {
+    var i = this.loopNum % this.toRotate.length;
+    var fullTxt = this.toRotate[i];
+
+    if (this.isDeleting) {
+      this.txt = fullTxt.substring(0, this.txt.length - 1);
+    } else {
+      this.txt = fullTxt.substring(0, this.txt.length + 1);
+    }
+
+    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+    var that = this;
+    var delta = 250 - Math.random() * 100;
+
+    if (this.isDeleting) { delta /= 2; }
+
+    if (!this.isDeleting && this.txt === fullTxt) {
+      delta = this.period;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.txt === '') {
+      this.isDeleting = false;
+      this.loopNum++;
+      delta = 500;
+    }
+
+    setTimeout(function() {
+      that.tick();
+    }, delta);
+  };
+
+  window.onload = function() {
+    var elements = document.getElementsByClassName('txt-rotate');
+    for (var i=0; i<elements.length; i++) {
+      var toRotate = elements[i].getAttribute('data-rotate');
+      var period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtRotate(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+    // INJECT CSS
+    var css = document.createElement("style");
+    css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #999; background:#223 content-box; color:white;padding:10px 5px 15px 0;}";
+  document.body.appendChild(css);
+  };
+
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="node_modules/smooth-scrollbar/dist/smooth-scrollbar.js"></script>
+
+<script>
+  var Scrollbar = window.Scrollbar;
+
+  Scrollbar.init(document.querySelector('#top'));
+</script>
+
+  </head>
+  <body id="top" class="body">
+    <div id="overlay" onclick="off()">
+      <div id="text"><div id="second" class="row">
+        <h4 class="title text-center col-md-12">Downloads</h4>
+        <div class="col-md-4 cols"  style="margin-right:-10px;"><p style="text-align: center">Personal / Admin</p>
+          <a href="attachments/Curriculum-Vitae.docx"><div class="download" id="d1"><div class="interior"><img src="images/word-icon.jpg" style="margin: -5px 10px 0 20px;" />Curriculum-Vitae</div></div></a>
+          <a href="attachments/Curriculum-Vitae.pdf"><div class="download" id="d2"><div class="interior"><img src="images/pdf-icon.jpg" style="margin: -5px 10px 0 20px;" />Curriculum-Vitae</div></div></a>
+          <a href="attachments/Personal-Statement.docx"><div class="download" id="d3"><div class="interior"><img src="images/word-icon.jpg" style="margin: -5px 10px 0 20px;" />Personal-Statement</div></div></a>
+        </div>
+        <div class="col-md-4 cols"><div style="padding:5px; border: 2px solid #223;text-align: center;background-color:none;font-size:19px"><div id="downimg"></div></div>
+        </div>
+        <div class="col-md-4 cols" style="margin-left:0px;"><p style="text-align: center">Project Reports</p>
+          <a href="attachments/vr.pdf"><div class="download" id="d4" style="text-align:center;font-size:12px;width:300px;"><div class="interior"><img src="images/pdf-icon.jpg" style="margin: -5px 10px 0 10px;" />Programming in Virtual Reality</div></div></a>
+          <a href="attachments/debris.pdf"><div class="download" id="d5" style="text-align:center;font-size:12px;width:300px;"><div class="interior" style="margin-top:10px;"><img src="images/pdf-icon.jpg" style="margin: 0px 15px 0 8px;" />Modelling the Dynamical Motion of Space Debris</div></div></a>
+          <a href="attachments/light.pdf"><div class="download" id="d6" style="text-align:center;font-size:12px;width:300px;"><div class="interior"><img src="images/pdf-icon.jpg" style="margin: -5px 10px 0 12px;" />Modelling the Behaviour of Lightning</div></div></a>
+          <a href="attachments/rod.pdf"><div class="download" id="d7" style="text-align:center;font-size:12px;width:300px;"><div class="interior" style="margin-top:11px;"><img src="images/pdf-icon.jpg" style="margin: -5px 10px 0 12px;" />Modelling the Oscillatory Behaviour of Elastic Rods with Variable Structure</div></div></a>
+        </div>
+
+      </div>
+      </div>
+
+    </div>
+    <header>
+      <div class="profile-page sidebar-collapse">
+
+        <nav id="nav" class="navbar navbar-expand-lg fixed-top navbar-transparent bg-primary" color-on-scroll="400" style="width:105%;margin-top:15px;">
+          <div class="container">
+            <div class="navbar-translate"><a class="navbar-brand" href="javascript:window.location.reload(true)" rel="tooltip">Home</a>
+              <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+              <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                                <li class="nav-item"><a class="nav-link smooth-scroll" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
+
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="page-content">
+      <div>
+<div class="profile-page">
+  <div class="wrapper">
+    <div class="page-header page-header-small">
+      <div class="cardhead">
+</div>
+
+
+<div style="background:none;top:0;position:absolute;z-index:100;margin:0 auto;left:calc(50%);margin-left:-175px">
+      <img src="images/profile.png" style="margin:0 auto; display:block;width:300px;padding-top:100px;z-index:10" alt="Image"/>
+      <div class="container" style="top:-10px">
+        <div class="h2 title font-resize">Alex Rowan-Smith</div>
+        <div class="content-center" style="background: transparent;">
+          <p class="font-resize1" style="background: transparent;margin-top:-50px;">Digital Technologies, Modelling and Simulation Systems Engineering Consultant</p>
+          <a class="btn btn-primary smooth-scroll mr-2" id="btn" href="#contact" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Contact Me</a><button class="btn btn-primary" style="margin-left:12px;" id="btn" onclick="on()">Downloads</button>
+        </div>
+      </div>
+      <div class="section" style="background: #223;border-radius:5px;margin-top:50px;box-shadow:0px 5px 25px 0px rgba(0, 0, 0, 0.2);z-index:1">
+        <div class="container" style="top:350px;padding-left:30px">
+<div class="button-container"><a id="btn1" style="margin-right:10px" class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" data-placement="bottom" title="Follow me on Github"><i class="fa fa-github"></i></a><a id="btn1" class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" data-placement="bottom" title="Add me on Skype"><i class="fa fa-skype"></i></a></div>
+        </div>
+        <div class="container" style="top:350px;padding-left:30px">
+<div class="button-container1"><a id="btn1" class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" data-placement="bottom" style="margin-right:10px" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a><a id="btn1" style="margin-right:10px" class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" data-placement="bottom" title="Follow me on LinkedIn"><i class="fa fa-linkedin"></i></a></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:40px;" id="start"></div>
+<hr style="margin-top:100px">
+<div class="row" style="margin-top:20px;">
+<div class="section col-md-8" id="about" style="margin-left:30px;">
+  <div class="container">
+    <div class="h4 text-center mb-4 title" style="margin-top:-30px;">Introduction</div>
+    <div class="card" data-aos="fade-up" data-aos-offset="10" style="padding:0 30px 50px 50px;">
+      <div class="type" style="margin-top:50px;margin-bottom:-30px;"><h1>Welcome to
+        <span
+           class="txt-rotate"
+           data-period="2000"
+           data-rotate='[ "my personal website.", "my career portfolio.", "my CV.", "me..."]'></span>
+      </h1></div>
+      <div class="row" style="border-bottom: 1px solid #e0e0eb;padding-bottom:10px;margin-bottom:10px;">
+        <div class="col-lg-6 col-md-12">
+          <div class="card-body">
+            <div class="h4 mt-0 title">About</div>
+            <p>Hello... welcome to my personal and professional website. I have spent several years developing a fundamental understanding of HTML and CSS whilst relying upon my JavaScript knowledge to construct this website from the ground upwards.<br><br> This webpage provides me the opportunity to post any recent activities and projects I have been working on, simultaneously creating a comprehensive portfolio of my work. Please explore this site for all my current projects and interests whilst feeling free to contact with me regarding any queries using the form at the bottom of the page.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <div class="card-body">
+            <div class="h4 mt-0 title">Basic Information</div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
+              <div class="col-sm-8">alexrowansmith@gmail.com</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Work Email:</strong></div>
+              <div class="col-sm-8">alex.rowan-smith@novasystems.com</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Phone:</strong></div>
+              <div class="col-sm-8">+44 7868 229981</div>
+            </div>
+
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Work Address:</strong></div>
+              <div class="col-sm-8">Unit 1 Brabazon Business Park, Golf Course Lane, Filton, South Gloucestershire, UK, BS34 7PZ</div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-sm-4"><strong class="text-uppercase">Website:</strong></div>
+              <div class="col-sm-8"><a href="https://alexrowansmith.github.io">alexrowansmith.github.io</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row"><div style="padding:30px;">I am a recent graduate of the University of Durham, completing my degree in Mathematics, with focused specialisms in first-principled Mathematical Modelling and Simulation. I now work as a Digital Technologies, Modelling and Simulation Engineer for Nova Systems International, which allows me to evolve and impart my expertise in a professional environment.<br><br> Whilst developing empathetic and interpersonal qualities at university, I can also focus on high-level technical aspects, possessing aptitude and interest in Programming, Ethical Hacking, Web Development, Mathematical Modelling, Virtual Reality and Machine Learning.</div></div>
+    </div>
+  </div>
+</div>
+<div class="col-md-2" style="margin-right:-20px;right:-50px;margin-top:50px;">
+  <div class="badge-base LI-profile-badge linkedin" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="alex-rowan-smith-568882170" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/alex-rowan-smith-568882170?trk=profile-badge"></a></div>
+  <div class="feat">Featured</div><div class="feat1"><div class="row"><div class="proj1"><a href="https://www.linkedin.com/in/alex-rowan-smith-568882170/" target="_blank"><img src="images/web.jpg" class="projimg1"/></a></div><div class="proj1"><a href="https://www.linkedin.com/feed/update/urn:li:activity:6930546140211740672/" target="_blank"><img src="images/rodcover.png" class="projimg"/></a></div></div><div class="row" style="margin-left:32px;"><div class="projt"><p class="head">Link</p><p class="textmain">HTML CV</p></div><div class="projt" style="margin-right:6px;"><p class="head">Article</p><p class="textmain">Modelling the Oscillatory Behaviour of ...</p></div></div>
+
+<div class="row"><div class="proj1"><a href="https://www.linkedin.com/feed/update/urn:li:activity:6930547961319825408/" target="_blank"><img src="images/debriscover.png" class="projimg" style="object-position: 100% 0;margin-left:30px;"/></a></div><div class="proj1"><a href="https://www.linkedin.com/feed/update/urn:li:activity:6930548751287627776/" target="_blank"><img src="images/lightcover.png" class="projimg" style="margin-right:0"/></a></div></div><div class="row" style="margin-left:2px;"><div class="projt" style="margin-left:10px;"><p class="head">Article</p><p class="textmain">Modelling the Dynamical Motion of Space Debris</p></div><div class="projt" style="margin-left:-36px;"><p class="head" style="margin-left:15px;">Article</p><p class="textmain" style="margin-left:15px;">Modelling the Random Behaviour of ... </p></div></div>
+</div>
+</div>
+</div>
+<div class="section1" id="experience">
+  <div class="container cc-experience" style="margin-top:-50px;">
+    <div class="h4 text-center mb-4 title">Work Experience</div>
+    <div style="display:flex">
+    <div id="timeline-content" style="margin-top:-75px;" data-aos="zoom-out-right" data-aos-offset="500" data-aos-duration="700">
+
+  <ul class="timeline" style="padding-top:250px;">
+    <li class="event" data-date="August 2021" style="padding-top:0px;" align:'right'>
+    </li>
+    <li class="event" id="date" data-date="September 2018" style="padding-top:80px;" align:'right'>
+
+    </li>
+    <li class="event" data-date="June 2015" style="padding-top:20px;">
+
+    </li>
+  </ul>
+</div>
+<div>
+    <div class="card" style="border-radius:0px;">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>2021 - Present</p>
+            <div class="h5">Nova Systems International</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Digital Technologies, Modelling and Simulation Engineer</div>
+            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 592.27 237.22" style="top:10px;left:-10px;width:50%;position:absolute;opacity:0.15;" class="inline h-full w-full"><defs><style>
+                  .cls-1 {
+                    fill: #f53905;
+                  }
+                  .cls-2 {
+                    fill: #333f48;
+                  }
+                </style></defs> <path d="M171.44,116.4h16a68.88,68.88,0,0,0-66.81-66.64V65.61a51,51,0,0,0,50.79,50.79M65.76,120.51h-16a68.87,68.87,0,0,0,66.78,67V171.29a50.93,50.93,0,0,0-50.78-50.78m105.68,0a50.94,50.94,0,0,0-50.79,50.78v16.17a68.87,68.87,0,0,0,66.82-66.95Zm-54.9-70.75V65.61A50.94,50.94,0,0,1,65.76,116.4h-16a68.87,68.87,0,0,1,66.77-66.64" class="cls-1"></path> <path d="M248.75,63.62v37c-.52-1.57-1-2.92-1.51-4.09L233.35,63.62H211.44v49.76h13.12V76.61a43.43,43.43,0,0,0,1.66,4.55L240,113.38h21.91V63.62Z" class="cls-2"></path> <path d="M298.05,94.58c0,7-2,9.37-8,9.37s-8-2.36-8-9.37,2-9.36,8-9.36,8,2.36,8,9.36m-8-20c-13.43,0-21.45,7.46-21.45,20s8,20,21.45,20c20,0,21.52-15.29,21.52-20s-1.55-20-21.52-20" class="cls-2"></path> <polygon points="345.5 75.79 336.92 102.25 328.33 75.79 314.66 75.79 327.06 113.13 327.14 113.38 345.8 113.38 358.29 75.79 345.5 75.79" class="cls-2"></polygon> <path d="M388,95v.7c0,6-2.92,9.66-7.82,9.66-2,0-4.2-.93-4.2-3.54,0-2.32,1.2-3.45,4.59-4.29l2.14-.52A16.47,16.47,0,0,0,388,95m13.12,18a68.67,68.67,0,0,1-.66-10.12V88.17c0-8.87-6.15-13.56-17.77-13.56-11.25,0-18.77,5.4-19.16,13.76l0,.38h13V88.4c.07-3.13,2.12-4.66,6.27-4.66,4.55,0,5.16,1.61,5.16,3.18s-.57,2.44-4,3l-8.33,1.47c-9.29,1.55-12.91,4.88-12.91,11.86,0,6.72,4.95,11.06,12.6,11.06,6.58,0,11.21-2.49,13.52-7.22a44.19,44.19,0,0,0,.57,6l.06.3h11.64Z" class="cls-2"></path> <path d="M239.05,141.64l-9.36-1c-3.26-.38-4.91-1.87-4.91-4.43,0-3.05,2.84-4.87,7.6-4.87,5,0,8.1,2.2,8.63,6.18l0,.31h13.54l0-.39c-.46-6.07-4-16.26-22.18-16.26-13.64,0-21.45,5.8-21.45,15.92,0,8.43,5.06,13.67,14.25,14.74l10.68,1.18c3.66.51,5.29,2.06,5.29,5,0,3.52-2.7,5.24-8.26,5.24-7.69,0-9.26-4.65-9.51-7.41l0-.33H210l0,.38a17.42,17.42,0,0,0,5.39,12.13c3.9,3.58,9.7,5.39,17.24,5.39,14.82,0,22.34-5.55,22.34-16.51,0-9.28-5.22-14.3-16-15.33" class="cls-2"></path> <path d="M290.88,134.64,284,156.28,282.43,162l-1.78-5.68-7.23-21.63H259.75l12.18,36.56h7.8l-1.68,5H262.1V187h11c11.87,0,15.73-5.25,18.71-14.93l11.87-37.41Z" class="cls-2"></path> <path d="M380,145.73V134.64H370v-8.92h-7L357.67,135l-7.62,3.37v7.35h6.49v11.61c0,10.44,4.54,14.89,15.18,14.89h7.07V161.47H370V145.73Z" class="cls-2"></path> <path d="M484.82,133.46c-6.1,0-10.37,2.52-13,7.69-2.06-5-6.26-7.69-12.2-7.69-5.48,0-9.57,2.15-12.17,6.4v-5.22H434v37.59h13.41V154.54c0-7,2.14-10.1,6.93-10.1,3.83,0,5.69,2.26,5.69,6.93v20.86h13.19V154.54c0-7,2.13-10.1,6.93-10.1,3.82,0,5.68,2.26,5.68,6.93v20.86h13.41V149.45c0-10.46-5-16-14.45-16" class="cls-2"></path> <path d="M332.11,148.65l-7.59-.74c-3.61-.38-4-1.87-4-3,0-2.68,3-3.24,5.53-3.24,3.55,0,5.56,1.36,6,4h12.26c-.76-8-7.09-12.27-18.33-12.27-11.46,0-17.77,4.5-17.77,12.67,0,6.64,3.91,10.59,11.31,11.43l7.81.88c4.27.52,4.62,2,4.62,3.55,0,2.08-1.76,3.1-5.38,3.1-4,0-6.72-1.88-7.13-4.91H307.17c.23,4.11,2.61,13.23,19.15,13.23,12.23,0,18.43-4.34,18.43-12.9,0-7.32-3.9-11-12.64-11.86" class="cls-2"></path> <path d="M529.87,148.65l-7.59-.74c-3.61-.38-4-1.87-4-3,0-2.68,3-3.24,5.53-3.24,3.55,0,5.56,1.36,6,4h12.26c-.76-8-7.09-12.27-18.33-12.27-11.46,0-17.77,4.5-17.77,12.67,0,6.64,3.91,10.59,11.31,11.43l7.81.88c4.27.52,4.62,2,4.62,3.55,0,2.08-1.76,3.1-5.38,3.1-4,0-6.72-1.88-7.13-4.91H504.93c.23,4.11,2.61,13.23,19.15,13.23,12.23,0,18.43-4.34,18.43-12.9,0-7.32-3.9-11-12.64-11.86" class="cls-2"></path> <path d="M407.27,142.52c4.41,0,6.72,2,7.26,6.42H399.66c.81-4.56,3-6.42,7.61-6.42m6.62,18.54c-1.18,2-3.45,3.14-6.47,3.14-4.8,0-7.18-2.14-7.92-7.16H427l0-.3a18.28,18.28,0,0,0,.23-3.16c0-7.51-2.63-20.12-20.2-20.12-13,0-20.71,7.44-20.71,19.9s7.74,20,20.71,20c14.29,0,18.77-6.66,20-12.35Z" class="cls-2"></path></svg>
+            <p style="position:relative; top:0px;">As a mathematics graduate with a particular passion for mathematical modelling, I had always been fascinated and intrigued by the aerospace sector. Nova Systems has given me the perfect opportunity to transfer my mathematical skills into a professional environment while developing my business acumen. In addition to a few of the projects that can be found under the portfolio section below, my attention has been focused on developing an interface between Modelica and Python, as well as solely working to enhance a machine-learning capability using recurrent neural networks. As a simulation engineer I work on systems integration often for flight and mission training devices.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="border-radius:0px;">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <p>2015 - 2018</p>
+            <div class="h5">Cooperative Food</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5">Customer Team Member</div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/The_Co-Operative_clover_leaf_logo.svg" style="top:15px;width:20%;position:absolute; opacity:0.1">
+            <p style="position:relative; top:0px;">Working since the age of 16 has dramatically improved my confidence and interpersonal skills. Dealing with members often proved tricky but was absolutely necessary in this job. I also handled with customer complaints and refunds. During my time there I created relationships with customers and recieved praise for my helpful service. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="section">
+  <div class="container cc-education" style="margin-top:-50px;">
+    <div class="h4 text-center mb-4 title">Education</div>
+    <div style="display:flex">
+    <div id="timeline-content" style="margin-top:-75px;" data-aos="zoom-out-right" data-aos-offset="500" data-aos-duration="700">
+
+  <ul class="timeline" style="padding-top:180px;">
+    <li class="event" data-date="July 2022" style="padding-top:0px;" align:'right'>
+    </li>
+    <li class="event" id="date" data-date="June 2021" style="padding-top:280px;" align:'right'>
+
+    </li>
+    <li class="event" data-date="October 2017" style="padding-top:0px;">
+
+    </li>
+    <li class="event" data-date="July 2017" style="padding-top:85px;">
+
+    </li>
+    <li class="event" data-date="August 2015" style="padding-top:0px;">
+
+    </li>
+    <li class="event" data-date="June 2015" style="padding-top:70px;">
+
+    </li>
+    <li class="event" data-date="September 2010" style="padding-top:20px;">
+
+    </li>
+  </ul>
+</div>
+<div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p style="margin-top:-25px;">2022</p>
+            <div class="h5" style="margin-bottom: 20px;">CPD</div>
+            <div class="h6">University of Oxford</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5" style="margin-bottom:20px;">Developing AI Applications</div>
+            <img src="https://seeklogo.com/images/U/University_of_Oxford-logo-2ACBB1AA61-seeklogo.com.png" style="top:30px;width:16%;position:absolute; opacity:0.15">
+
+            <p>ML/AI Foundations; Classification (MLPs); Improving the baseline; Regression; Convolutional Neural Networks; Natural Language Processing; Recurrent Neural Networks; Autoencoders; Unsupervised Learning; TensorFlow and Cloud (VMs, Azure, AWS)
+</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p style="margin-top:-25px;">2017 - 2021</p>
+            <div class="h5" style="margin-bottom: 20px;">Degree</div>
+            <div class="h6">University of Durham</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5" style="margin-bottom:20px;">BSc (Hons) Mathematics</div>
+            <img src="https://pbs.twimg.com/profile_images/1103297632057872385/g3l3ds8v_400x400.png" style="top:10%;width:20%;position:absolute; opacity:0.15">
+            <p>During my time at university I found a unique passion for analytics and first-principaled mathematical modelling. This involves using analytical methods and fundamental physics to describe and evaluate highly-complex systems.
+            <h6>Year 1</h6>Analysis I, Calculus and Probability I,
+  Discrete Mathematics, Linear Algebra I, Programming
+  and Dynamics I, Statistics.
+  <h6>Year 2</h6>
+  Complex Analysis II, Analysis in Many Variables II,
+  Numerical Analysis II, Algebra II, Elementary Number Theory II,
+  Probability II, Mathematical Modelling II, Monte Carlo Simulation II.
+  <h6>Year 3</h6>Fluid Mechanics III, Operations Research III,
+  Dynamical Systems III, Differential Geometry III, Project III (Dissertation - 90%).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p style="margin-top:-25px;">2015 - 2017</p>
+            <div class="h5" style="margin-bottom: 20px;">Sixth-Form College</div>
+            <div class="h6">Exeter Mathematics School</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5" style="margin-bottom:20px;">A-Level</div>
+            <img src="https://pbs.twimg.com/profile_images/1050784518205001728/jya_GOTE_400x400.jpg" style="top:30px;width:18%;position:absolute; opacity:0.15">
+
+            <p>Obtained A*AA in Further Mathematics, Physics and Mathematics respectively. I also undertook a group of projects, collectively known as the Exeter Mathematics Certificate with further details under the Portfolio page; this envolved both presentations and project work for companies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-education-header">
+            <p style="margin-top:-25px;">2010-2015</p>
+            <div class="h5" style="margin-bottom: 20px;">Secondary School</div>
+            <div class="h6">South Dartmoor Community College</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+            <div class="h5" style="margin-bottom:20px;">GCSE</div>
+            <img src="data:image/png;base64,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" style="top:20px;width:18%;position:absolute; opacity:0.15">
+
+            <p>12 GCSEs all A*-C available upon request, including Maths and Geography at A* and Physics, Chemistry and Biology at A. FSMQ at A, as well as an Extended certificate in applied science</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+<div class="section1" id="skill">
+  <div class="container" style="margin-top:-50px;">
+    <div class="h4 text-center mb-4 title">Professional Skills</div>
+    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">HTML/CSS</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div><span class="progress-value">80%</span>
+              </div>
+              <p style="font-size:11px;margin-top:18px;">Web development has been an interest of mine for a long time, where my curiosity inspires me to delve deeper. This website was made from a blank document with the aim not to simply copy, but instead to understand each element I wanted to implement. As I developed my knowledge I began implementing JavaScript to create what you see before you.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Python</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div><span class="progress-value">85%</span>
+              </div>
+              <p style="font-size:11px;margin-top:18px;">Having been using Python for various projects over the past six years, I have become very accustom to the language and it's complementing modules and packages. Most of the projects you can find here will have been coded in Python 3.7. I currently work with <em style="font-weight:600">OMPython</em> to create an interface between Python and Modelica, as well as learning <em style="font-weight:600">sklearn, keras</em> and <em style="font-weight:600">pytorch</em> to aid in machine learning projects.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">Communication Skills</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div><span class="progress-value">70%</span>
+              </div>
+              <p style="font-size:11px;margin-top:18px;">I am very experienced with communicating, whether to customers or as a presentation. Having worked at a company primarily based on customer interactions and consulting, I have been able to really develop my interpersonal skills alongside the ability to manage others. </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">JavaScript</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div><span class="progress-value">60%</span>
+              </div>
+              <p style="font-size:11px;margin-top:18px;">Despite being relatively new to JavaScript, implementing scripts into HTML, and in fact aspects of this website, has been fascinating.</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">LaTeX</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 95%;"></div><span class="progress-value">95%</span>
+              </div>
+              <p style="font-size:11px;margin-top:18px;">I have been writing documents in Latex for over five years. In that time I have become proficient in generating and styling professional documents. Each full report found on the portfolio page was made using Latex.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="progress-container progress-primary"><span class="progress-badge">C++ / LUA</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div><span class="progress-value">20% +</span>
+              </div>
+              <p style="font-size:11px;margin-top:18px;">With many projects across the technical world using C++, I have only just begun learning these programming languages, having already started development work on the MAK One Suite. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="portfolio">
+  <div class="container" style="margin-top:-50px;">
+    <div class="row">
+      <div class="col-md-6 ml-auto mr-auto">
+        <div class="h4 text-center mb-4 title">Portfolio</div>
+      </div>
+    </div>
+    <p class="port" style="text-align:justify;">The portfolio provides a varying levels of detail on important and relevant projects I have worked on, and continue to develop. Click on the images below to expand on and explore some of the interesting work I have been fortunate enough to run and be a part of.</p>
+    <div class="row">
+      <div class="col-md-6 ml-auto mr-auto">
+        <div class="h4 text-center mb-4"><i class="fa fa-home" aria-hidden="true" style="padding-right:10px;"></i>
+Sixth-Form College (2015 - 2017)</div>
+      </div>
+    </div>
+    <div class="tab-content gallery mt-5">
+      <div class="tab-pane active" id="web-development">
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+
+              <div class="cc-porfolio-image img-raised" data-aos="fade-down-right" data-aos-anchor-placement="top-bottom"><a href="vr.html">
+                  <figure class="cc-effect"><img src="images/vr.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Programming in Virtual Reality</div>
+                      <p>Experimental Programming</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up-right" data-aos-anchor-placement="top-bottom"><a href="vr.html">
+                  <figure class="cc-effect"><img src="images/lecture.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Christmas Lectures</div>
+                      <p>Presentation</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-down-left" data-aos-anchor-placement="top-bottom"><a href="vr.html">
+                  <figure class="cc-effect"><img src="images/chart.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Vectorising Raster Charts</div>
+                      <p>Coding/Project Management</p>
+                    </figcaption>
+                  </figure></a></div>
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up-left" data-aos-anchor-placement="top-bottom">
+                  <figure class="cc-effect"><img src="images/web.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Web Development Project</div>
+                      <p>Web Development</p>
+                    </figcaption>
+                  </figure></div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="padding: 30px 0 40px 0;">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="h4 text-center mb-4"><i class="fa fa-graduation-cap" aria-hidden="true" style="padding-right:10px"></i>
+    University (2017 - 2021)</div>
+          </div>
+        </div>
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="debris.html">
+                  <figure class="cc-effect"><img src="images/debris.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Modelling the Dynamical Motion of <br>Space Debris </div>
+                      <p>Mathematical Modelling</p>
+                    </figcaption>
+                  </figure></a></div>
+              </div>
+              <div class="col-md-6">
+                <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="debris.html">
+                    <figure class="cc-effect"><img src="images/octo.jpg" alt="Image"/>
+                      <figcaption>
+                        <div class="h4">Modelling Oscillatory Behaviour of <br>Elastic Rods with Variable Structure</div>
+                        <p>Dissertation</p>
+                      </figcaption>
+                    </figure></a></div>
+              </div>
+              <div class="col-md-12">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="debris.html">
+                  <figure class="cc-effect cc-effect12"><img src="images/light.jpg" alt="Image" style="height:430px;"/>
+                    <figcaption style="margin-top:-120px;">
+                      <div class="h4">Modelling the Behaviour of Lightning </div>
+                      <p>Mathematical Modelling</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row" style="padding: 30px 0 40px 0;">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="h4 text-center mb-4"><i class="fa fa-briefcase" aria-hidden="true" style="padding-right:10px"></i>
+    Nova Systems (2021 - Present)</div>
+          </div>
+        </div>
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="zoom-out-right" data-aos-anchor-placement="top-bottom"><a href="f35.html">
+                  <figure class="cc-effect"><img src="images/f35.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">F-35 Capability Concept Demonstrator</div>
+                      <p>Simulation</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="zoom-out-left" data-aos-anchor-placement="top-bottom"><a href="f35.html">
+                  <figure class="cc-effect"><img src="images/systems-eng.jpg" alt="Image" style="height:395px;"/>
+                    <figcaption>
+                      <div class="h4">Digital Twin / ML and AI</div>
+                      <p>Modelling and Machine Learning</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-12">
+            <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="debris.html">
+                <figure class="cc-effect cc-effect12"><img src="images/eldon.webp" alt="Image" style="height:430px;object-fit:cover;min-height:100%; min-width: 100%;"/>
+                  <figcaption style="margin-top:-120px;">
+                    <div class="h4">ELDON Technical Demonstrator </div>
+                    <p>Simulation</p>
+                  </figcaption>
+                </figure></a></div>
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section1" id="reference">
+  <div class="container cc-reference" style="margin-top:-50px;">
+    <div class="h4 mb-4 text-center title">References (Coming Soon)</div>
+    <div class="slider" data-aos="fade-right" data-aos-offset="400" data-aos-duration="20000">
+    	<div class="slide-track">
+    		<div class="slide">
+    			<div class="ref">
+            <h4>Reference 1</h4>
+            <p class="refname"><i>Surname</i>, Forename</p>
+            <p class="job">Job Title</p>
+
+          </div>
+    		</div>
+    		<div class="slide">
+    			<img src="images/stock.jpg" height="100" width="250" alt="" style="float:right;margin-right:180px;"/>
+    		</div>
+        <div class="slide">
+          <div class="ref">
+            <h4>Reference 2</h4>
+            <p class="refname"><i>Surname</i>, Forename</p>
+            <p class="job">Job Title</p>
+            <p></p>
+          </div>
+        </div>
+    		<div class="slide">
+    			<img src="images/stock.jpg" height="100" width="250" alt="" style="float:right;margin-right:180px;" />
+    		</div>
+        <div class="slide">
+          <div class="ref">
+            <h4>Reference 3</h4>
+            <p class="refname"><i>Surname</i>, Forename</p>
+            <p class="job">Job Title</p>
+          </div>
+        </div>
+    		<div class="slide">
+    			<img src="images/stock.jpg" height="100" width="250" alt="" style="float:right;margin-right:180px;" />
+    		</div>
+    	</div>
+    </div>
+  </div>
+</div>
+<div class="section" id="contact"><div id="map"></div>
+  <div class="cc-contact-information">
+    <div class="container">
+      <div class="cc-contact">
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="card mb-0" data-aos="zoom-in">
+              <div class="h4 text-center title" style="margin-top:-5px;">Contact Me</div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <form action="https://formspree.io/alex.rowan-smith@novasystems.com" method="POST">
+                      <div class="p pb-3"><strong>Send you message or query here. </strong></div>
+                      <div class="row mb-3">
+                        <div class="col" style="margin-bottom:-15px;">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user-circle"></i></span>
+                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col" style="margin-bottom:-15px;">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                            <input class="form-control" type="text" name="Subject" placeholder="Subject" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input class="form-control" type="email" name="_replyto" placeholder="E-mail" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="form-group">
+                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn btn-primary" id="btn" type="submit">Send</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <p class="mb-0"style="margin-bottom:20px;"><strong>Address</strong></p>
+                    <p>Unit 1 Brabazon Business Park, Golf Course Lane, Filton, South Gloucestershire, UK, BS34 7PZ</p>
+                    <p class="mb-0"><strong>Phone</strong></p>
+                    <p class="pb-2">+44 7868 229981</p>
+                    <p class="mb-0"><strong>Email</strong></p>
+                    <p style="margin-bottom:1px;">alexrowansmith@googlemail.com</p>
+                    <p>alex.rowan-smith@novasystems.com</p>
+                    <div style="float:right;margin:20px 10px 0 0;background-color:#223;padding:20px 40px 20px 20px;color:white;border-radius:5px;margin-right:-40px"><i class="fa fa-hand-paper-o" style="font-size:30px;font-weight:lighter;margin-right:20px;"></i><i class="fa fa-long-arrow-right" style="font-size:30px;transform:scale(1.5,1)"></i>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+    </div>
+      <div class="text-center text-muted" style="margin-top:-70px;background:#223;height:120px;padding-top:50px;padding-bottom:15px;display:flex; justify-content: space-between">
+        <p style="margin-left:100px;">Last Updated: Sun Jun 18 2023 12:31:04 GMT+0100 (British Summer Time)</p><p id="date-time" style="float:right;margin-right:30px;"></p>
+      </div>
+      <span onclick="transitionToPage('https://www.google.com')"></span>
+      <script>
+      $('body').append('<div style="" id="loadingDiv"><div class="loader">Loading.</div></div>');
+      $(window).on('load', function(){
+        setTimeout(removeLoader, 600); //wait for page load PLUS two seconds.
+      });
+      function removeLoader(){
+          $( "#loadingDiv" ).fadeOut(600, function() {
+            // fadeOut complete. Remove the loading div
+            $( "#loadingDiv" ).remove(); //makes page more lightweight
+        });
+      }</script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+  defer
+></script>
+<script>
+var dt = new Date();
+document.getElementById('date-time').innerHTML=dt;
+</script>
+<script>
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const loc = { lat:  51.508696287516024, lng: -2.579421389056249};
+  const cen = { lat: 51.48052647906705, lng:  -3.731069605172235};
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 9,
+    center: cen,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: loc,
+    map: map,
+  });
+}
+
+window.initMap = initMap;
+</script>
+<script>
+$(function() {
+  $('#d1').hover(function() {
+    $('#downimg').css('background-image', 'url("images/cv1.png")');
+    $('#downimg').css('opacity', '1');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#downimg').css('opacity', '0');
+    $('#downimg').css('background-image', '');
+
+  });
+});
+</script>
+<script>
+$(function() {
+  $('#d2').hover(function() {
+    $('#downimg').css('background-image', 'url("images/cv1.png")');
+    $('#downimg').css('opacity', '1');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#downimg').css('opacity', '0');
+    $('#downimg').css('background-image', '');
+
+  });
+});
+</script>
+<script>
+$(function() {
+  $('#d3').hover(function() {
+    $('#downimg').css('background-image', 'url("images/ps.png")');
+    $('#downimg').css('opacity', '1');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#downimg').css('opacity', '0');
+    $('#downimg').css('background-image', '');
+
+  });
+});
+</script>
+<script>
+$(function() {
+  $('#d4').hover(function() {
+    $('#downimg').css('background-image', 'url("images/vrcover.png")');
+    $('#downimg').css('opacity', '1');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#downimg').css('opacity', '0');
+    $('#downimg').css('background-image', '');
+
+  });
+});
+</script>
+<script>
+$(function() {
+  $('#d5').hover(function() {
+    $('#downimg').css('background-image', 'url("images/debriscover.png")');
+    $('#downimg').css('opacity', '1');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#downimg').css('opacity', '0');
+    $('#downimg').css('background-image', '');
+
+  });
+});
+</script>
+<script>
+$(function() {
+  $('#d6').hover(function() {
+    $('#downimg').css('background-image', 'url("images/lightcover.png")');
+    $('#downimg').css('opacity', '1');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#downimg').css('opacity', '0');
+    $('#downimg').css('background-image', '');
+
+  });
+});
+</script>
+<script>
+$(function() {
+  $('#d7').hover(function() {
+    $('#downimg').css('background-image', 'url("images/rodcover1.png")');
+    $('#downimg').css('opacity', '1');
+  }, function() {
+    // on mouseout, reset the background colour
+    $('#downimg').css('opacity', '0');
+    $('#downimg').css('background-image', '');
+
+  });
+});
+</script>
+<script>
+function on() {
+  document.getElementById("overlay").style.opacity = "1";
+  document.getElementById("overlay").style.height = "110%";
+  document.getElementById("overlay").style.width = "100%";
+  document.getElementById("text").style.opacity = "1";
+  document.getElementById("text").style.height = "65%";
+  document.getElementById("second").style.color = "#223";
+  document.getElementById("d1").style.display = "block";
+  document.getElementById("d2").style.display = "block";
+  document.getElementById("d3").style.display = "block";
+  document.getElementById("d4").style.display = "block";
+  document.getElementById("d5").style.display = "block";
+  document.getElementById("d6").style.display = "block";
+  document.getElementById("d7").style.display = "block";
+
+
+}
+
+function off() {
+  document.getElementById("overlay").style.opacity = "0";
+  document.getElementById("overlay").style.height = "0px";
+  document.getElementById("overlay").style.width = "0%";
+  document.getElementById("text").style.opacity = "0";
+  document.getElementById("text").style.height = "0px";
+  document.getElementById("second").style.color = "rgba(0,0,0,0)";
+  document.getElementById("d1").style.display = "none";
+  document.getElementById("d2").style.display = "none";
+  document.getElementById("d3").style.display = "none";
+  document.getElementById("d4").style.display = "none";
+  document.getElementById("d5").style.display = "none";
+  document.getElementById("d6").style.display = "none";
+  document.getElementById("d7").style.display = "none";
+
+}
+</script>
+    <script src="js/core/jquery.3.2.1.min.js?ver=1.1.0"></script>
+    <script src="js/core/popper.min.js?ver=1.1.0"></script>
+    <script src="js/core/bootstrap.min.js?ver=1.1.0"></script>
+    <script src="js/now-ui-kit.js?ver=1.1.0"></script>
+    <script src="js/aos.js?ver=1.1.0"></script>
+    <script src="scripts/main.js?ver=1.1.0"></script>
+
+  </body>
+</html>
